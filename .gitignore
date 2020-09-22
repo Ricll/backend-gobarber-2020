@@ -1,0 +1,8 @@
+node_modules
+tmp
+.env
+yarn-error.log
+IDS.TXT
+notes.txt
+README.md
+
