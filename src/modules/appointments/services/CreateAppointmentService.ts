@@ -39,5 +39,3 @@ class CreateAppointmentService {
 }
 
 export default CreateAppointmentService;
-
-/* ID:6 */

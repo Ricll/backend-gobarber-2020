@@ -14,9 +14,9 @@ import '@shared/container';
 const app = express();
 
 app.use(cors());
-app.use(express.json()); // Permite o express usar JSON
+app.use(express.json());
 app.use('/files', express.static(uploadConfig.uploadsFolder));
-app.use(routes); // Na verdade e o arquivo src/routes/index.ts
+app.use(routes);
 
 app.use((err: Error, request: Request, response: Response, _: NextFunction) => {
   if (err instanceof AppError) {
@@ -34,6 +34,4 @@ app.use((err: Error, request: Request, response: Response, _: NextFunction) => {
 
 app.listen(3333, () => {
   console.log('SERVER STARTED');
-}); // http inside
-
-/* ID: 1 */
+});
