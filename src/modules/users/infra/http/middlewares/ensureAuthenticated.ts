@@ -3,7 +3,7 @@ import { verify } from 'jsonwebtoken';
 import AuthConfig from '@config/auth';
 import AppError from '@shared/errors/AppError';
 
-interface TokenPayload {
+interface ITokenPayload {
   iat: number;
   expr: number;
   sub: string;
