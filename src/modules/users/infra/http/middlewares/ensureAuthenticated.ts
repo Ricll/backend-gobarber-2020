@@ -20,22 +20,19 @@ export default function ensureAuthenticated(
     throw new AppError('JWT Token is Missing', 401);
   }
   // separa Bearer do token ['bearer', '769345347]
-  //                        type       token
-  // [, token] -> JS strategy
 
   const [, token] = authHeader.split(' ');
   try {
     const decoded = verify(token, AuthConfig.jwt.secret);
-    // [as TokenPayload] e uma maneira de forçar uma variavel a ser o que voce precisa
-    // E uma estrategia do typescript
-    const { sub } = decoded as TokenPayload;
+
+    const { sub } = decoded as ITokenPayload;
 
     request.user = {
       id: sub,
     };
 
     return next();
-  } catch (err) {
+  } catch {
     throw new AppError('Invalid JWT Token', 401);
   }
 }
