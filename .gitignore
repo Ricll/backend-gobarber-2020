@@ -1,8 +1,16 @@
+.idea/
+.vscode/
 node_modules
-tmp
+build/
+tmp/
+coverage
+ormconfig.json
 .env
+
 yarn-error.log
 IDS.TXT
 notes.txt
 README.md
 
+tmp/*
+!tmp.gitkeep
