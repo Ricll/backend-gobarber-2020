@@ -44,11 +44,6 @@ class AuthenticateUserService {
       throw new AppError(' Incorret email/password combination', 401);
     }
 
-    // Primeiro parametro payload. Aqui as informacoes nao sao seguras
-    // So deve ser usado no front end
-    // O segundo e uma chave secreta. Ele vai criar um secrete depois
-    // Terceiro configuracoes do token
-
     const { secret, expiresIn } = AuthConfig.jwt;
 
     const token = sign({}, secret, {
