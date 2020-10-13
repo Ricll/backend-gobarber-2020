@@ -37,10 +37,10 @@ class ListProviderAppointmentsService {
     if (!appointments) {
       appointments = await this.appointmentsRepository.findAllInDayFromProvider(
         {
-          day,
-          month,
-          year,
           provider_id,
+          year,
+          month,
+          day,
         },
       );
 

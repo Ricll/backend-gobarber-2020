@@ -22,7 +22,7 @@ class Appointment {
   @JoinColumn({ name: 'provider_id' })
   provider: User;
 
-  @Column()
+  @Column('varchar')
   user_id: string;
 
   @ManyToOne(() => User)
@@ -40,5 +40,3 @@ class Appointment {
 }
 
 export default Appointment;
-
-/* ID 4 */
